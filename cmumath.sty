@@ -1,0 +1,65 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{cmumath}
+
+%% AMS-LaTeX packages for mathematical writing
+\RequirePackage{amsmath, amsfonts, amsthm, amssymb}
+
+%% Enable easy use of page numbering and headers
+\RequirePackage{fancyhdr}
+
+%% Use the entire page, and save the trees!
+\RequirePackage{fullpage}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\oddsidemargin-0.5cm
+\evensidemargin-0.5cm
+\topmargin-0.5cm     
+\textwidth17cm  
+\textheight23.5cm  
+
+%% Personal Commands
+\newcommand{\myname}{Chris Jones}
+\newcommand{\myandrew}{csj@andrew.cmu.edu}
+
+%% Single-letter commands for common sets/functions
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\0}{\emptyset}
+\newcommand{\w}{\omega}
+
+\newcommand{\pset}[1]{\mathcal{P}({#1})}
+
+%% Number theory
+\newcommand{\pcon}{\equiv_p}
+\newcommand{\ncon}{\equiv_n}
+\newcommand{\dnd}{\nmid}
+
+%% Physics
+\newcommand{\bra}{\langle}
+\newcommand{\ket}{\rangle}
+\newcommand{\cross}{\times}
+\newcommand{\normal}{\lhd}
+
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\inprod}[2]{\bra {#1}, {#2}\ket}
+
+%% Other random abbreviations that aren't included in amsmath
+\newcommand{\osc}{\text{osc}}
+\newcommand{\spn}{\text{spn}}
+
+\newcommand{\bs}{\boldsymbol}
+
+%% Question environment, for question titles
+\newcounter{questionCounter}
+\newenvironment{question}[2][\arabic{questionCounter}]{%
+    \vspace{.25in} \hrule \vspace{0.5em}%
+        \noindent{\bf #2}%
+    \vspace{0.8em} \hrule \vspace{.10in}%
+    \addtocounter{questionCounter}{1}%
+}{}
+
+\endinput
