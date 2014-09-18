@@ -12,4 +12,4 @@ You can find the value of `$TEXMFHOME` using TeX's kpsewhich:
 Then you can just put the line `\usepackage{cmumath}` and it will just work!
 
 Check out `template.tex` for a juicy example.
-(Make sure to change the `/myname` and `/myandrew` command to reflect your name and AndrewID!
+(Make sure to change the `/myname` and `/myandrew` command to reflect your name and AndrewID!)
