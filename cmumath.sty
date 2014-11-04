@@ -7,14 +7,19 @@
 %% Enable easy use of page numbering and headers
 \RequirePackage{fancyhdr}
 
+%% Enumerate lists using letters for parts. Wow!
+\RequirePackage{enumerate}
+
 %% Use the entire page, and save the trees!
-\RequirePackage{fullpage}
+%% How to change margins: use
+%
+%	geometry{margin=<yourSize>in}
+%
+%% before \begin{document}
+%% More options for page-to-page variation in geometry package
+\RequirePackage[margin=0.5in]{geometry}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{5pt plus 1pt}
-
-\oddsidemargin-0.5cm
-\evensidemargin-0.5cm
-\topmargin-0.5cm     
 \textwidth17cm  
 \textheight23.5cm  
 
@@ -32,26 +37,36 @@
 \newcommand{\w}{\omega}
 
 \newcommand{\pset}[1]{\mathcal{P}({#1})}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\text{Var}}
 
 %% Number theory/algebra
 \newcommand{\pcon}{\equiv_p}
 \newcommand{\ncon}{\equiv_n}
 \newcommand{\divides}{\mid}
 \newcommand{\dnd}{\nmid}
+\newcommand{\floor}[1]{\lfloor{#1}\rfloor}
+\newcommand{\ceil}[1]{\lceil{#1}\rceil}
 \newcommand{\normal}{\lhd}
 \newcommand{\Hom}[2]{\text{Hom}({#1}, {#2})}
+\newcommand{\restrict}{\upharpoonright}
+\newcommand{\dom}{\text{dom}}
+\newcommand{\we}{\prec}
+\newcommand{\weq}{\preceq}
 
 %% Physics
 \newcommand{\bra}{\langle}
 \newcommand{\ket}{\rangle}
 \newcommand{\cross}{\times}
 
+\newcommand{\abs}[1]{|{#1}|}
 \newcommand{\norm}[1]{\|{#1}\|}
 \newcommand{\inprod}[2]{\bra {#1}, {#2}\ket}
 
 %% Other random abbreviations that aren't included in amsmath
 \newcommand{\osc}{\text{osc}}
 \newcommand{\spn}{\text{spn}}
+\newcommand{\proj}{\text{proj}}
 
 \newcommand{\bs}{\boldsymbol}
 
