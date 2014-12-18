@@ -23,6 +23,9 @@
 \textwidth17cm  
 \textheight23.5cm  
 
+%% Used for drawing boxes around things. Easy to use
+\RequirePackage{framed}
+
 %% Personal Commands
 \newcommand{\myname}{Chris Jones}
 \newcommand{\myandrew}{csj@andrew.cmu.edu}
@@ -36,6 +39,7 @@
 \newcommand{\0}{\emptyset}
 \newcommand{\w}{\omega}
 
+\newcommand{\id}{\text{id}}
 \newcommand{\pset}[1]{\mathcal{P}({#1})}
 \newcommand{\E}{\mathbb{E}}
 \DeclareMathOperator{\Var}{Var}
@@ -48,11 +52,16 @@
 \newcommand{\floor}[1]{\lfloor{#1}\rfloor}
 \newcommand{\ceil}[1]{\lceil{#1}\rceil}
 \newcommand{\normal}{\lhd}
-\newcommand{\Hom}[2]{\text{Hom}({#1}, {#2})}
+\DeclareMathOperator{\Hom}{Hom}
 \newcommand{\restrict}{\upharpoonright}
 \DeclareMathOperator{\dom}{dom}
 \newcommand{\we}{\prec}
 \newcommand{\weq}{\preceq}
+
+%% Logic
+\newcommand{\deduce}{\vdash}
+\newcommand{\model}{\vDash}
+\DeclareMathOperator{\ult}{Ult}
 
 %% Physics
 \newcommand{\bra}{\langle}
@@ -64,9 +73,11 @@
 \newcommand{\inprod}[2]{\bra {#1}, {#2}\ket}
 
 %% Other random abbreviations that aren't included in amsmath
+\newcommand{\pd}[2]{\frac{\partial{#1}}{\partial{#2}}}
 \DeclareMathOperator{\osc}{osc}
 \DeclareMathOperator{\spn}{spn}
 \DeclareMathOperator{\proj}{proj}
+\newcommand{\stir}[2]{{{#1} \brace {#2}}}
 
 \newcommand{\bs}{\boldsymbol}
 
