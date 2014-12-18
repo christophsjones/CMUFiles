@@ -33,12 +33,12 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\C}{\mathbb{C}}
-\newcommand{\0}{\emptyset}
+\newcommand{\0}{\varnothing}
 \newcommand{\w}{\omega}
 
 \newcommand{\pset}[1]{\mathcal{P}({#1})}
 \newcommand{\E}{\mathbb{E}}
-\newcommand{\Var}{\text{Var}}
+\DeclareMathOperator{\Var}{Var}
 
 %% Number theory/algebra
 \newcommand{\pcon}{\equiv_p}
@@ -50,7 +50,7 @@
 \newcommand{\normal}{\lhd}
 \newcommand{\Hom}[2]{\text{Hom}({#1}, {#2})}
 \newcommand{\restrict}{\upharpoonright}
-\newcommand{\dom}{\text{dom}}
+\DeclareMathOperator{\dom}{dom}
 \newcommand{\we}{\prec}
 \newcommand{\weq}{\preceq}
 
@@ -64,9 +64,9 @@
 \newcommand{\inprod}[2]{\bra {#1}, {#2}\ket}
 
 %% Other random abbreviations that aren't included in amsmath
-\newcommand{\osc}{\text{osc}}
-\newcommand{\spn}{\text{spn}}
-\newcommand{\proj}{\text{proj}}
+\DeclareMathOperator{\osc}{osc}
+\DeclareMathOperator{\spn}{spn}
+\DeclareMathOperator{\proj}{proj}
 
 \newcommand{\bs}{\boldsymbol}
 
