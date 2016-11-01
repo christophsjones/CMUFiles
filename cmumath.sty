@@ -7,8 +7,14 @@
 %% Enable easy use of page numbering and headers
 \RequirePackage{fancyhdr}
 
-%% Enumerate lists using letters for parts. Wow!
-\RequirePackage{enumerate}
+%% Enumerate lists in various ways, multiple column simultaneously
+\RequirePackage{enumerate, multicol}
+
+%% blackboard numbers
+\RequirePackage{bbm}
+
+%% Fancy restatable theorem environments
+\RequirePackage{thmtools, thm-restate}
 
 %% Use the entire page, and save the trees!
 %% How to change margins: use
@@ -23,12 +29,21 @@
 \textwidth17cm  
 \textheight23.5cm  
 
-%% Used for drawing boxes around things. Easy to use
-\RequirePackage{framed}
+%% Uncomment if you want double spaced text
+%\RequirePackage[doublespacing]{setspace}
 
-%% Personal Commands
-\newcommand{\myname}{Chris Jones}
-\newcommand{\myandrew}{csj@andrew.cmu.edu}
+%% Drawing pictures, including images, boxing things
+\RequirePackage{tikz, graphicx, framed}
+
+%% Personal
+\newcommand{\hwname}{\color{red} REDEFINE \textbackslash hwname PLZ}
+\newcommand{\header}{
+\begin{center}
+{\Large \hwname}\\
+Chris Jones\\
+csj@uchicago.edu\\
+\today
+\end{center}}
 
 %% Single-letter commands for common sets/functions
 \newcommand{\Z}{\mathbb{Z}}
@@ -36,24 +51,70 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\K}{\mathbb{K}}
 \newcommand{\0}{\emptyset}
 \newcommand{\w}{\omega}
 
 \newcommand{\id}{\text{id}}
+\newcommand{\restrict}{\upharpoonright}
 \newcommand{\pset}[1]{\mathcal{P}({#1})}
-\newcommand{\E}{\mathbb{E}}
+\newcommand{\abs}[1]{\left|{#1}\right|}
+\newcommand{\norm}[1]{\left\|{#1}\right\|}
+\newcommand{\innerproduct}[2]{\left\langle {#1}, {#2}\right\rangle}
+
+\DeclareMathOperator{\E}{\mathbb{E}}
 \DeclareMathOperator{\Var}{Var}
+
+%% Analysis ( + Boolean Fourier)
+\newcommand{\eps}{\varepsilon}
+\newcommand{\1}{\mathbbm{1}}
+\newcommand{\pd}[2]{\frac{\partial{#1}}{\partial{#2}}}
+
+\DeclareMathOperator{\res}{Res}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\sign}{sgn}
+\DeclareMathOperator{\osc}{osc}
+\DeclareMathOperator{\spn}{spn}
+\DeclareMathOperator{\proj}{proj}
+
+\DeclareMathOperator{\MaxInf}{\bf MaxInf}
+\DeclareMathOperator{\Inf}{\bf Inf}
+\DeclareMathOperator{\Stab}{\bf Stab}
+
+%% Complexity theory
+\newcommand{\true}{\textsf{True}}
+\newcommand{\false}{\textsf{False}}
+\renewcommand{\P}{{\sc P}}
+\newcommand{\NP}{{\sc NP}}
+\newcommand{\BPP}{{\sc BPP}}
+\newcommand{\compclass}[1]{{\sc {#1}}}
+
+%% Quantum computing
+\newcommand{\bra}{\langle}
+\newcommand{\ket}{\rangle}
+\newcommand{\qbit}[1]{|#1\ket}
+\newcommand{\bitq}[1]{\bra #1|}
+\newcommand{\qbq}[2]{\bra #1|#2\ket}
+%\renewcommand{\0}{\qbit{0}}
+%\newcommand{\1}{\qbit{1}}
+\newcommand{\+}{\qbit{+}}
+\renewcommand{\-}{\qbit{-}}
+
+\newcommand{\cross}{\times}
 
 %% Number theory/algebra
 \newcommand{\pcon}{\equiv_p}
 \newcommand{\ncon}{\equiv_n}
 \newcommand{\divides}{\mid}
 \newcommand{\dnd}{\nmid}
-\newcommand{\floor}[1]{\lfloor{#1}\rfloor}
-\newcommand{\ceil}[1]{\lceil{#1}\rceil}
+\newcommand{\floor}[1]{\left\lfloor{#1}\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil{#1}\right\rceil}
+\newcommand{\ceiling}[1]{\left\lceil{#1}\right\rceil}
+\DeclareMathOperator{\lcm}{lcm}
+
 \newcommand{\normal}{\lhd}
 \DeclareMathOperator{\Hom}{Hom}
-\newcommand{\restrict}{\upharpoonright}
 \DeclareMathOperator{\dom}{dom}
 \newcommand{\we}{\prec}
 \newcommand{\weq}{\preceq}
@@ -63,22 +124,10 @@
 \newcommand{\model}{\vDash}
 \DeclareMathOperator{\ult}{Ult}
 
-%% Physics
-\newcommand{\bra}{\langle}
-\newcommand{\ket}{\rangle}
-\newcommand{\cross}{\times}
-
-\newcommand{\abs}[1]{|{#1}|}
-\newcommand{\norm}[1]{\|{#1}\|}
-\newcommand{\inprod}[2]{\bra {#1}, {#2}\ket}
-
-%% Other random abbreviations that aren't included in amsmath
-\newcommand{\pd}[2]{\frac{\partial{#1}}{\partial{#2}}}
-\DeclareMathOperator{\osc}{osc}
-\DeclareMathOperator{\spn}{spn}
-\DeclareMathOperator{\proj}{proj}
+%% Discrete math
 \newcommand{\stir}[2]{{{#1} \brace {#2}}}
 
+%% Formatting
 \newcommand{\bs}{\boldsymbol}
 
 %% Question environment, for question titles
@@ -89,5 +138,13 @@
     \vspace{0.8em} \hrule \vspace{.10in}%
     \addtocounter{questionCounter}{1}%
 }{}
+
+%% More generic environments
+\newtheorem{problem}{Problem}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+
+\theoremstyle{remark} %% any \newtheorems after this are "remark" formatted
+\newtheorem*{remark}{Remark}
 
 \endinput
